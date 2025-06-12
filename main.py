@@ -2,7 +2,6 @@ import os
 from web3 import Web3
 from eth_account import Account
 
-
 Account.enable_unaudited_hdwallet_features()
 
 INFURA_URL = "https://mainnet.infura.io/v3/YOU_INFURA_KEY"
@@ -19,7 +18,6 @@ def load_seeds(file_path="seeds.txt"):
     with open(file_path, "r") as file:
         return [line.strip() for line in file.readlines()]
 
-
 def check_balance(address):
     try:
         balance = web3.eth.get_balance(address)
@@ -27,7 +25,6 @@ def check_balance(address):
     except Exception as e:
         print(f"Error checking balance for {address}: {e}")
         return None
-
 
 def save_results(results, filename="results.txt"):
     with open(filename, "w") as file:
@@ -45,8 +42,6 @@ def main():
                 wallet = Account.from_mnemonic(seed)
                 address = wallet.address
                 print(f"[{i}/{len(seeds)}] Checking wallet: {address}")
-
-                
                 balance = check_balance(address)
                 if balance and balance > 0:
                     print(f"Wallet {address} has a balance of {balance} ETH.")
@@ -58,7 +53,6 @@ def main():
 
     except KeyboardInterrupt:
         print("\nProcess interrupted by user (Ctrl+C). Saving results so far...")
-
     
     if results:
         save_results(results)
