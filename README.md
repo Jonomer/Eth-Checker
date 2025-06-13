@@ -51,7 +51,7 @@ Using this script for unauthorized access to Ethereum wallets is illegal and une
 ## 🧑‍💻 Author
 
 **Enver**
-Cybersecurity Student | Bash Lover | Exploit Curious
+
 
 ---
 
